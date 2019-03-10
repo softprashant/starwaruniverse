@@ -1,0 +1,9 @@
+{
+  "name": "star-war-universe",
+  "version": "0.0.0",
+  "description": "StarWarUniverse",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  }
+}
