@@ -5,6 +5,12 @@
     <Name>StarWarUniverse</Name>
     <RootNamespace>StarWarUniverse</RootNamespace>
     <LastActiveSolutionConfig>Debug|Any CPU</LastActiveSolutionConfig>
+    <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
+    <EnableTypeScript>true</EnableTypeScript>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <ToolsVersionPromptShown>0.0</ToolsVersionPromptShown>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -20,7 +26,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
     <NodejsPort>1337</NodejsPort>
-    <StartWebBrowser>true</StartWebBrowser>
+    <StartWebBrowser>True</StartWebBrowser>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,9 +35,201 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="dist\app-bundle.js" />
+    <Compile Include="public\bootstrap\dist\js\bootstrap.bundle.js" />
+    <Compile Include="public\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Compile Include="public\bootstrap\dist\js\bootstrap.js" />
+    <Compile Include="public\bootstrap\dist\js\bootstrap.min.js" />
+    <Compile Include="public\bootstrap\js\dist\alert.js" />
+    <Compile Include="public\bootstrap\js\dist\button.js" />
+    <Compile Include="public\bootstrap\js\dist\carousel.js" />
+    <Compile Include="public\bootstrap\js\dist\collapse.js" />
+    <Compile Include="public\bootstrap\js\dist\dropdown.js" />
+    <Compile Include="public\bootstrap\js\dist\index.js" />
+    <Compile Include="public\bootstrap\js\dist\modal.js" />
+    <Compile Include="public\bootstrap\js\dist\popover.js" />
+    <Compile Include="public\bootstrap\js\dist\scrollspy.js" />
+    <Compile Include="public\bootstrap\js\dist\tab.js" />
+    <Compile Include="public\bootstrap\js\dist\toast.js" />
+    <Compile Include="public\bootstrap\js\dist\tooltip.js" />
+    <Compile Include="public\bootstrap\js\dist\util.js" />
+    <Compile Include="public\bootstrap\js\src\alert.js" />
+    <Compile Include="public\bootstrap\js\src\button.js" />
+    <Compile Include="public\bootstrap\js\src\carousel.js" />
+    <Compile Include="public\bootstrap\js\src\collapse.js" />
+    <Compile Include="public\bootstrap\js\src\dropdown.js" />
+    <Compile Include="public\bootstrap\js\src\index.js" />
+    <Compile Include="public\bootstrap\js\src\modal.js" />
+    <Compile Include="public\bootstrap\js\src\popover.js" />
+    <Compile Include="public\bootstrap\js\src\scrollspy.js" />
+    <Compile Include="public\bootstrap\js\src\tab.js" />
+    <Compile Include="public\bootstrap\js\src\toast.js" />
+    <Compile Include="public\bootstrap\js\src\tools\sanitizer.js" />
+    <Compile Include="public\bootstrap\js\src\tooltip.js" />
+    <Compile Include="public\bootstrap\js\src\util.js" />
     <Compile Include="server.js" />
+    <Compile Include="webpack-config.js" />
+    <Content Include="dist\app-bundle.js.map" />
+    <Content Include="dist\images\page-background.jpg" />
+    <Content Include="dist\style\App\StarWarUniverseApp.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="public\bootstrap\dist\css\bootstrap-grid.css" />
+    <Content Include="public\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <Content Include="public\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="public\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="public\bootstrap\dist\css\bootstrap-reboot.css" />
+    <Content Include="public\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <Content Include="public\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="public\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="public\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="public\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="public\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="public\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="public\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <Content Include="public\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="public\bootstrap\dist\js\bootstrap.js.map" />
+    <Content Include="public\bootstrap\dist\js\bootstrap.min.js.map" />
+    <Content Include="public\bootstrap\js\dist\alert.js.map" />
+    <Content Include="public\bootstrap\js\dist\button.js.map" />
+    <Content Include="public\bootstrap\js\dist\carousel.js.map" />
+    <Content Include="public\bootstrap\js\dist\collapse.js.map" />
+    <Content Include="public\bootstrap\js\dist\dropdown.js.map" />
+    <Content Include="public\bootstrap\js\dist\index.js.map" />
+    <Content Include="public\bootstrap\js\dist\modal.js.map" />
+    <Content Include="public\bootstrap\js\dist\popover.js.map" />
+    <Content Include="public\bootstrap\js\dist\scrollspy.js.map" />
+    <Content Include="public\bootstrap\js\dist\tab.js.map" />
+    <Content Include="public\bootstrap\js\dist\toast.js.map" />
+    <Content Include="public\bootstrap\js\dist\tooltip.js.map" />
+    <Content Include="public\bootstrap\js\dist\util.js.map" />
+    <Content Include="public\bootstrap\LICENSE" />
+    <Content Include="public\bootstrap\package.json" />
+    <Content Include="public\bootstrap\README.md" />
+    <Content Include="public\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="public\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="public\bootstrap\scss\bootstrap.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_background-variant.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_badge.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_deprecate.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_float.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_grid-framework.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_hover.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_nav-divider.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_screen-reader.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_size.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_table-row.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_text-emphasis.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_text-hide.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="public\bootstrap\scss\mixins\_visibility.scss" />
+    <Content Include="public\bootstrap\scss\utilities\_align.scss" />
+    <Content Include="public\bootstrap\scss\utilities\_background.scss" />
+    <Content Include="public\bootstrap\scss\utilities\_borders.scss" />
+    <Content Include="public\bootstrap\scss\utilities\_clearfix.scss" />
+    <Content Include="public\bootstrap\scss\utilities\_display.scss" />
+    <Content Include="public\bootstrap\scss\utilities\_embed.scss" />
+    <Content Include="public\bootstrap\scss\utilities\_flex.scss" />
+    <Content Include="public\bootstrap\scss\utilities\_float.scss" />
+    <Content Include="public\bootstrap\scss\utilities\_overflow.scss" />
+    <Content Include="public\bootstrap\scss\utilities\_position.scss" />
+    <Content Include="public\bootstrap\scss\utilities\_screenreaders.scss" />
+    <Content Include="public\bootstrap\scss\utilities\_shadows.scss" />
+    <Content Include="public\bootstrap\scss\utilities\_sizing.scss" />
+    <Content Include="public\bootstrap\scss\utilities\_spacing.scss" />
+    <Content Include="public\bootstrap\scss\utilities\_stretched-link.scss" />
+    <Content Include="public\bootstrap\scss\utilities\_text.scss" />
+    <Content Include="public\bootstrap\scss\utilities\_visibility.scss" />
+    <Content Include="public\bootstrap\scss\vendor\_rfs.scss" />
+    <Content Include="public\bootstrap\scss\_alert.scss" />
+    <Content Include="public\bootstrap\scss\_badge.scss" />
+    <Content Include="public\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="public\bootstrap\scss\_button-group.scss" />
+    <Content Include="public\bootstrap\scss\_buttons.scss" />
+    <Content Include="public\bootstrap\scss\_card.scss" />
+    <Content Include="public\bootstrap\scss\_carousel.scss" />
+    <Content Include="public\bootstrap\scss\_close.scss" />
+    <Content Include="public\bootstrap\scss\_code.scss" />
+    <Content Include="public\bootstrap\scss\_custom-forms.scss" />
+    <Content Include="public\bootstrap\scss\_dropdown.scss" />
+    <Content Include="public\bootstrap\scss\_forms.scss" />
+    <Content Include="public\bootstrap\scss\_functions.scss" />
+    <Content Include="public\bootstrap\scss\_grid.scss" />
+    <Content Include="public\bootstrap\scss\_images.scss" />
+    <Content Include="public\bootstrap\scss\_input-group.scss" />
+    <Content Include="public\bootstrap\scss\_jumbotron.scss" />
+    <Content Include="public\bootstrap\scss\_list-group.scss" />
+    <Content Include="public\bootstrap\scss\_media.scss" />
+    <Content Include="public\bootstrap\scss\_mixins.scss" />
+    <Content Include="public\bootstrap\scss\_modal.scss" />
+    <Content Include="public\bootstrap\scss\_nav.scss" />
+    <Content Include="public\bootstrap\scss\_navbar.scss" />
+    <Content Include="public\bootstrap\scss\_pagination.scss" />
+    <Content Include="public\bootstrap\scss\_popover.scss" />
+    <Content Include="public\bootstrap\scss\_print.scss" />
+    <Content Include="public\bootstrap\scss\_progress.scss" />
+    <Content Include="public\bootstrap\scss\_reboot.scss" />
+    <Content Include="public\bootstrap\scss\_root.scss" />
+    <Content Include="public\bootstrap\scss\_spinners.scss" />
+    <Content Include="public\bootstrap\scss\_tables.scss" />
+    <Content Include="public\bootstrap\scss\_toasts.scss" />
+    <Content Include="public\bootstrap\scss\_tooltip.scss" />
+    <Content Include="public\bootstrap\scss\_transitions.scss" />
+    <Content Include="public\bootstrap\scss\_type.scss" />
+    <Content Include="public\bootstrap\scss\_utilities.scss" />
+    <Content Include="public\bootstrap\scss\_variables.scss" />
+    <Content Include="index.html" />
+    <Content Include="libman.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
+    <Content Include="tsconfig.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="dist\components\planet\planet.tsx" />
+    <TypeScriptCompile Include="dist\components\planet\PlanetDetailModel.tsx" />
+    <TypeScriptCompile Include="dist\services\planetService\planetService.tsx" />
+    <TypeScriptCompile Include="StarWarUniverseApp.tsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="dist\" />
+    <Folder Include="dist\components\planet\" />
+    <Folder Include="dist\images\" />
+    <Folder Include="dist\components\" />
+    <Folder Include="dist\services\" />
+    <Folder Include="dist\services\planetService\" />
+    <Folder Include="dist\style\" />
+    <Folder Include="public\bootstrap\" />
+    <Folder Include="public\bootstrap\dist\" />
+    <Folder Include="public\bootstrap\dist\css\" />
+    <Folder Include="public\bootstrap\dist\js\" />
+    <Folder Include="public\bootstrap\js\" />
+    <Folder Include="public\bootstrap\js\dist\" />
+    <Folder Include="public\bootstrap\js\src\" />
+    <Folder Include="public\bootstrap\js\src\tools\" />
+    <Folder Include="public\bootstrap\scss\" />
+    <Folder Include="public\bootstrap\scss\mixins\" />
+    <Folder Include="public\bootstrap\scss\utilities\" />
+    <Folder Include="public\bootstrap\scss\vendor\" />
+    <Folder Include="dist\style\App\" />
+    <Folder Include="public\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
